@@ -1,0 +1,88 @@
+.account-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    width: 45%;
+    background-color: #cccccc71;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    margin-top: 50px;
+    backdrop-filter: blur(2px);
+
+}
+
+/* Titre */
+.account-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Formulaire */
+.account-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.account-input {
+    width: 100%;
+    height: 36px;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+/* Focus sur les inputs */
+.account-input:focus {
+    border-color: #309c59;
+    outline: none;
+}
+
+/* Boutons */
+.account-button {
+    width: 100%;
+    background-color: #309c59;
+    color: white;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+}
+
+.account-button:hover {
+    background-color: #267a47;
+}
+
+/* Bouton Supprimer le compte */
+.delete-account-button {
+    background-color: #e74c3c;
+    margin: 20px;
+    font-size: 1.3rem;
+}
+
+.delete-account-button:hover {
+    background-color: #c0392b;
+}
+
+/* Message d'erreur ou succès */
+.account-message {
+    margin-top: 20px;
+    color: #309c59;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.account-title-page {
+    color: #309c59;
+    font-size: 3rem;
+}

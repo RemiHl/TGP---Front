@@ -1,0 +1,42 @@
+.a-propos-container {
+    padding: 0;
+    margin: 0;
+    background-color: #f9f9f9;
+}
+
+.fonctionnement-container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+}
+
+.fonctionnement-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* L'image est en arrière-plan */
+}
+
+.fonctionnement-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garde les proportions de l'image tout en remplissant */
+    background-size: cover;
+    background-position: center;
+}
+
+.fonctionnement-text-container {
+    position: absolute;
+    z-index: 2;
+    left: 20px;
+    bottom: 50px;
+}
+
+.fonctionnement-title {
+    font-size: 5.5em;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: left;
+}

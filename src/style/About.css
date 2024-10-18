@@ -1,0 +1,123 @@
+/* Conteneur principal pour le texte et les cercles */
+.about {
+    display: flex;
+    justify-content: space-between; /* Sépare le texte et les cercles */
+    align-items: center; /* Aligne verticalement le texte et les cercles */
+    min-height: 300px;
+    text-align: left;
+    margin-bottom: 40px;
+    padding: 20px;
+    position: relative; /* Pour assurer que le contenu reste dans le conteneur */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Texte de la section about */
+.about-text {
+    flex: 1;
+    font-size: 24px;
+    color: rgb(61, 61, 61);
+    margin-right: 50px; 
+    text-align: center;
+    padding-left: 50px;
+}
+
+.about-text h2 {
+    color: green;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 30px;
+}
+
+.more-btn {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    border: none;
+    font-family: "League Gothic", sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+.more-btn:hover {
+    background-color: rgb(0, 104, 0);
+}
+
+/* Conteneur principal des cercles */
+.circle-container {
+    width: 28vw;
+    height: 33vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Cercles (externe et interne) */
+.outer-circle, .inner-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px dashed #ccc;
+}
+
+/* Cercle extérieur */
+.outer-circle {
+    width: 280px;
+    height: 280px;
+    animation: rotate 20s linear infinite;
+}
+
+/* Cercle intérieur */
+.inner-circle {
+    width: 200px;
+    height: 200px;
+    animation: rotate 15s linear infinite reverse;
+}
+
+/* Icônes */
+.icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+}
+
+.icon img {
+    width: 100%;
+    height: 100%;
+}
+
+.center-logo img {
+    height: 140px;
+}
+
+
+
+/* Positionnement des icônes */
+.outer-circle .icon:nth-child(1) { top: -3%; left: 50%; transform: translateX(-50%); }
+.outer-circle .icon:nth-child(2) { top: 50%; left: 97%; transform: translateY(-50%); }
+.outer-circle .icon:nth-child(3) { top: 111%; left: 50%; transform: translate(-50%, -100%); }
+.outer-circle .icon:nth-child(4) { top: 50%; left: -4%; transform: translateY(-50%); }
+
+.inner-circle .icon:nth-child(1) { top: -5%; left: 50%; transform: translateX(-50%); }
+.inner-circle .icon:nth-child(2) { top: 50%; left: 96%; transform: translateY(-50%); }
+.inner-circle .icon:nth-child(3) { top: 50%; left: -4%; transform: translateY(-50%); }
+
+/* Animation de rotation */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(50px); /* Translation initiale */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Affichage des éléments lors du scroll */
+.reveal-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

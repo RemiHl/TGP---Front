@@ -1,0 +1,27 @@
+#bubbles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Place les bulles derrière tout le contenu */
+}
+
+/* Styles pour les bulles */
+.bubble {
+    position: absolute;
+    bottom: -100px; /* Position initiale en bas */
+    background-color: rgba(34, 139, 34, 0.5); /* Vert semi-transparent */
+    border-radius: 50%;
+    pointer-events: none; /* Permet de cliquer à travers les bulles */
+    animation: floatUp linear forwards;
+}
+
+/* Animation de flottement */
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh); /* Déplace la bulle vers le haut */
+        opacity: 0; /* Disparaît progressivement */
+    }
+}

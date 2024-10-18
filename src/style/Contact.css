@@ -1,0 +1,217 @@
+.contact-background {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.contact-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px); /* Ajoute un flou de l'arrière-plan */
+    margin-top: 50px;
+}
+
+/* Form Box Styling */
+.contact-form-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 100%;
+    text-align: center;
+    background-color: #f9f9f96b;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards ease-in-out;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Contact Form Title */
+.contact-form-box h2 {
+    font-size: 2.8em;
+    color: #309c59;
+    margin-bottom: 20px;
+}
+
+.contact-form-box p {
+    font-size: 1.3em;
+}
+
+/* Form Inputs */
+.contact-form-box input[type="email"],
+.contact-form-box textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #f9f9f9;
+    outline: none;
+    transition: border 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Input and Textarea Focus State */
+.contact-form-box input[type="email"]:focus,
+.contact-form-box textarea:focus {
+    border-color: #309c59;
+}
+
+.contact-form-box input[type="email"], .contact-form-box textarea {
+    border-radius: 8px;
+    height: 30px;
+}
+
+/* Textarea Styling */
+.contact-form-box textarea {
+    min-height: 150px;
+    background: rgba(255, 255, 255, 0.37);
+}
+
+.contact-form-box input[type="email"] {
+    background: rgba(255, 255, 255, 0.596);
+}
+
+/* Submit Button */
+.contact-form-box button {
+    width: 100%;
+    background-color: #309c59;
+    color: white;
+    font-size: 1.5em;
+    font-family: 'League Gothic', sans-serif;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form-box button:hover {
+    background-color: #267a47;
+}
+
+/* Response Message Styling */
+.response-message {
+    margin-top: 35px;
+    font-size: 1em;
+    color: #309c59;
+}
+
+label {
+    font-size: 1.2em;
+}
+
+/* Media Queries */
+
+/* Small Devices - 480px */
+@media (max-width: 480px) {
+    .contact-form-box {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .contact-form-box h2 {
+        font-size: 2em;
+    }
+
+    .contact-form-box p {
+        font-size: 1em;
+    }
+
+    .contact-form-box button {
+        font-size: 1.2em;
+    }
+
+    .contact-form-box input[type="email"],
+    .contact-form-box textarea {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    label {
+        font-size: 1em;
+    }
+}
+
+/* Medium Devices - 768px */
+@media (max-width: 768px) {
+    .contact-form-box {
+        padding: 30px;
+        width: 85%;
+    }
+
+    .contact-form-box h2 {
+        font-size: 2.4em;
+    }
+
+    .contact-form-box p {
+        font-size: 1.2em;
+    }
+
+    .contact-form-box button {
+        font-size: 1.3em;
+    }
+
+    .contact-form-box input[type="email"],
+    .contact-form-box textarea {
+        padding: 12px;
+        font-size: 1em;
+    }
+
+    label {
+        font-size: 1.1em;
+    }
+}
+
+/* Large Devices - 1280px */
+@media (min-width: 1280px) {
+    .contact-form-box {
+        width: 400px;
+        padding: 30px;
+    }
+
+    .contact-form-box h2 {
+        font-size: 3em;
+    }
+
+    .contact-form-box p {
+        font-size: 1.5em;
+    }
+
+    .contact-form-box button {
+        font-size: 1.8em;
+    }
+
+    .contact-form-box input[type="email"],
+    .contact-form-box textarea {
+        padding: 20px;
+        font-size: 1.1em;
+    }
+
+    label {
+        font-size: 1.3em;
+    }
+}

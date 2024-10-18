@@ -1,0 +1,58 @@
+.accueil {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.accueil-content {
+    color: white;
+    position: absolute;
+    bottom: 20px; 
+    left: 20px;
+    color: white;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.accueil-content h1 {
+    font-size: 90px;
+    text-align: left;
+}
+
+.home-image-container {
+    overflow: hidden;
+    position: relative;
+    height: 100vh; /* Prendre toute la hauteur de l'écran */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* L'image commence hors de l'écran */
+.home-image {
+    transform: translateX(100%); /* L'image est initialement hors de l'écran à droite */
+    width: 100%; /* Ajustez selon la taille souhaitée */
+    height: auto;
+    transition: transform 1s ease; /* Optionnel pour ajouter une fluidité */
+}
+
+/* Cacher le titre au départ */
+.home-title {
+    opacity: 0; /* Le titre invisible */
+    transition: opacity 4s ease;
+    font-size: 5.5em;
+    color: white;
+    bottom: 20px;
+    left: 20px;
+    z-index: 2; /* titre sur l'image */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Assurer que le titre soit bien positionné dans la section */
+.home-title-container {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1;
+}

@@ -1,0 +1,102 @@
+/* Style pour le conteneur d'arrière-plan */
+.background {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Boîte de connexion */
+.login-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    max-width: 290px;
+    max-height: 77%;
+    top: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Centrer le logo */
+.login-logo {
+    width: 50%;
+    box-shadow: #9e9e9e 0px 0px 20px;
+    border-radius: 50%;
+}
+
+.login-content h2 {
+    color: green;
+}
+
+/* Bouton de connexion */
+.login-btn {
+    width: 100%;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-family: "League Gothic", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 15px rgba(76, 175, 80, 0.5); }
+    50% { box-shadow: 0 0 25px rgba(76, 175, 80, 1); }
+    100% { box-shadow: 0 0 15px rgba(76, 175, 80, 0.5); }
+}
+
+.input-group input {
+    width: 100%;
+    font-size: 16px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.input-group input::placeholder {
+    color: #b3b3b3;
+}
+
+.input-group input:focus {
+    /* background-color: rgba(255, 255, 255, 0.3); */
+    border: 0.5px solid rgba(0, 128, 0, 0.432);
+
+}
+
+.login-footer a {
+    text-decoration: none;
+    color: green;
+}
+
+.login-footer p {
+    margin-top: 50px;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+    color: rgb(0, 104, 0);
+}
+
+.login-btn:hover {
+    background-color: #3f9043;
+}
+
+.message {
+    padding-top: 15px;
+    font-size: 16px;
+    color: rgb(189, 0, 0);
+}

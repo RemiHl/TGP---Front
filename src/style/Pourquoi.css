@@ -1,0 +1,19 @@
+.pourquoi-nous-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.pourquoi-nous-title {
+    font-size: 3em;
+    color: #309c59; /* Vert principal */
+    margin-bottom: 40px;
+}
+
+.pourquoi-nous-content {
+    font-size: 2em;
+    line-height: 1.5;
+    color: #555; /* Couleur du texte */
+    max-width: 1200px;
+    margin: 0 auto;
+}
