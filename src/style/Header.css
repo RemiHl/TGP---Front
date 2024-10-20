@@ -1,14 +1,11 @@
 header {
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 80px;
     align-items: center;
     z-index: 100;
     display: flex;
     justify-content: space-between;
-    padding: 0 20px; /* Ajout d'un padding latéral */
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
     opacity: 0;
@@ -29,27 +26,24 @@ header nav ul li {
     display: inline;
 }
 
-/* Animation pour la bordure autour des liens */
 header nav ul li a, .logout-btn {
     color: white;
     text-decoration: none;
     font-size: 16px;
     border-radius: 6px;
     padding: 3px 15px;
-    background-color: rgba(0, 128, 0, 0.658);
+    background-color: rgba(0, 128, 0, 0.781);
     position: relative;
-    border: 2px solid transparent; /* Début sans bordure visible */
-    transition: border 0.3s ease-in-out; /* Animation sur la bordure */
+    border: 2px solid transparent;
+    transition: border 0.3s ease-in-out;
 }
 
-/* Lors du hover, la bordure devient visible avec une animation */
 header nav ul li a:hover, .logout-btn:hover {
-    border: 2px solid white; /* Bordure blanche visible au hover */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
 }
 
 .logout-btn {
-    background-color: rgba(209, 3, 3, 0.658); /* Couleur spécifique pour le bouton "Se déconnecter" */
+    background-color: rgba(209, 3, 3, 0.658);
     border: none;
     cursor: pointer;
     margin-right: 30px;
@@ -60,7 +54,6 @@ header nav ul li a:hover, .logout-btn:hover {
     background-color: rgba(185, 0, 0, 0.85);
 }
 
-/* Animation du hover pour le header */
 header:hover {
     animation: shadowExpand 0.5s forwards ease-in-out;
 }
@@ -69,7 +62,6 @@ header:hover {
     0% {
         box-shadow: 0 0 0 rgba(87, 87, 87, 0.2);
     }
-
     100% {
         box-shadow: 0 4px 30px rgba(87, 87, 87, 0.65);
     }
@@ -82,67 +74,70 @@ header:hover {
     align-items: center;
 }
 
+.burger-menu {
+    display: none;
+}
+
 /* === Media Queries === */
-@media (max-width: 1280px) {
-    header nav ul li a {
-        font-size: 16px;
-        padding: 3px 15px;
-    }
 
-    .logo {
-        width: 120px;
-        height: 130px;
-    }
-}
-
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        height: auto;
-        padding: 10px;
-    }
-
-    header nav ul {
-        flex-direction: inline;
-        align-items: center;
-    }
-
-    header nav ul li a {
-        font-size: 12px;
-        margin-bottom: 10px;
-        padding: 0px 3px;
-    }
-
-    .logo {
-        width: 70px;
-        height: 65px;
-    }
-}
-
+/* Mobile burger menu */
 @media (max-width: 480px) {
     header {
         flex-direction: column;
         height: auto;
+        padding-bottom: 10px;
+    }
+
+    .burger-menu {
+        display: block;
+        cursor: pointer;
+        font-size: 18px;
+        color: white;
+        background-color: rgba(0, 128, 0, 0.658);
+        border-radius: 5px;
         padding: 10px;
     }
 
     header nav ul {
+        display: none;
         flex-direction: column;
         align-items: center;
+        background-color: rgba(0, 128, 0, 0.658);
+        position: absolute;
+        top: 138px;
+        left: 44.5%;
+        transform: translateX(-50%);
+        width: 80%;
+        z-index: 99;
+    }
+
+    .active {
+        display: flex;
+        height: 160%;
+        top: 80%;
+        background-color: rgba(0, 128, 0, 0.63);
+        position: absolute;
+        transform: translateX(-50%);
+        width: 100%;
+        z-index: 99;
     }
 
     header nav ul li a {
         font-size: 18px;
-        padding: 6px 10px;
-        margin-bottom: 8px;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.271);
+        top: 14px;
     }
 
     .logo {
         width: 80px;
-        height: 90px;
+        height: 80px;
     }
 
     .logout-btn {
         font-size: 18px;
+        width: 100%;
+        text-align: center;
     }
 }
