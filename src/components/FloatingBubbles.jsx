@@ -3,7 +3,7 @@ import '../style/FloatingBubbles.css';
 
 const FloatingBubbles = () => {
     useEffect(() => {
-        const numInitialBubbles = 50; // Nombre initial de bulles
+        const numInitialBubbles = 40; // Nombre initial de bulles
         const bubblesContainer = document.getElementById('bubbles-container');
 
         // Fonction pour créer une bulle
@@ -47,7 +47,9 @@ const FloatingBubbles = () => {
         return () => clearInterval(interval);
     }, []);
 
-    return <div id="bubbles-container"></div>;
+    return (
+        <div id="bubbles-container"></div>
+    );
 };
 
 export default FloatingBubbles;

@@ -24,11 +24,11 @@
     width: 100%;
     height: auto;
     object-fit: cover;
-    transition: opacity 1s ease-in-out; /* Transition pour un effet fondu */
+    transition: opacity 1s ease-in-out; 
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0; /* Rendre l'image invisible par défaut */
+    opacity: 0;
 }
 
 .carousel-image.active {
@@ -37,13 +37,14 @@
 
 .carousel-controls {
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
     width: 100%;
     text-align: center;
+    align-items: center;
 }
 
 .carousel-dot {
-    display: inline-block;
+    display: inline-flex;
     width: 10px;
     height: 10px;
     margin: 0 5px;
@@ -55,6 +56,8 @@
 
 .carousel-dot.active {
     background-color: #309c59;
+    width: 10px;
+    height: 10px;
 }
 
 .carousel-text h2{
@@ -84,4 +87,32 @@
     color: #ffffff;
     margin: 0;
     font-size: 1.5rem;
+}
+
+@media (max-width: 480px) {
+    .carousel-container {
+        width: 80%;
+        height: 35vh;
+    }
+
+    .carousel-dot.active {
+        position: absolute;
+        background-color: green;
+        
+    }
+
+    .carousel-image-container {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .carousel-image.active {
+        left: 50%;
+        top: 0;
+        height: 100%;
+    }
+
+    .carousel-title h3 {
+        font-size: 1.3em;
+    }
 }

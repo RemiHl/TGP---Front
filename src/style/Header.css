@@ -113,7 +113,7 @@ header:hover {
 
     .active {
         display: flex;
-        height: 160%;
+        height: 220%;
         top: 80%;
         background-color: rgba(0, 128, 0, 0.63);
         position: absolute;

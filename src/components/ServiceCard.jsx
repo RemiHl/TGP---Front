@@ -8,7 +8,6 @@ function ServiceCard({ title, description, cardBackground }) {
         cards.forEach(card => {
             const textElement = card.querySelector('.service-description');
 
-            // Ajouter l'événement de hover
             card.addEventListener('mouseenter', () => {
                 textElement.style.transform = 'translateY(0)';
                 textElement.style.opacity = '1';

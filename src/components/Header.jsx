@@ -43,7 +43,7 @@ function Header() {
     };
 
     const toggleMenu = () => {
-        setMenuOpen(!menuOpen); // Change l'état du menu
+        setMenuOpen(!menuOpen);
     };
 
     return (

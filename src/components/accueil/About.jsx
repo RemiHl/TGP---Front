@@ -37,7 +37,7 @@ function About() {
                     En savoir plus
                 </button>
             </div>
-            <div className="circle-container">
+            <div className="circle-container reveal-on-scroll">
                 <div className="center-logo">
                     <img src={logo} alt="T.G.P"/>
                 </div>

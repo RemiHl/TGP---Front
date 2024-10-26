@@ -121,3 +121,14 @@
     opacity: 1;
     transform: translateY(0);
 }
+
+@media (max-width: 480px) {
+    .about {
+        display: grid;
+    }
+
+    .circle-container {
+        width: auto;
+        height: 90vw;
+    }
+}
