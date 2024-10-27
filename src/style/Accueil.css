@@ -23,16 +23,16 @@
 .home-image-container {
     overflow: hidden;
     position: relative;
-    height: 100vh; /* Prendre toute la hauteur de l'écran */
+    height: 100vh; 
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* L'image commence hors de l'écran */
+/* L'image commence hors de l'ecran */
 .home-image {
-    transform: translateX(100%); /* L'image est initialement hors de l'écran à droite */
-    width: 100%; /* Ajustez selon la taille souhaitée */
+    transform: translateX(100%); 
+    width: 100%; 
     height: auto;
     transition: transform 1s ease; /* Optionnel pour ajouter une fluidité */
 }

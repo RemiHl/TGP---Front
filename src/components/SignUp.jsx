@@ -60,7 +60,10 @@ function SignUp() {
             });
 
             if (response.ok) {
+                const data = await response.json(); // Récupération de la réponse JSON
+                localStorage.setItem('token', data.token); // Stockage du token JWT
                 setMessage('Inscription réussie !');
+                
                 // Rediriger vers la page de connexion après une inscription réussie
                 setTimeout(() => {
                     navigate('/login');
