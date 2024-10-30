@@ -6,36 +6,30 @@ function ContactForm() {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const [responseMessage, setResponseMessage] = useState('');
+    const [csrfToken, setCsrfToken] = useState('');
 
-    // Animation JavaScript
+    // Récupérer le token CSRF lors du montage du composant
     useEffect(() => {
-        const slideInForm = () => {
-            const formElement = document.querySelector('.contact-form-box');
-            let position = 100;
-            let opacity = 0;
-
-            const animate = () => {
-                if (position > 0) {
-                    position -= 2;
-                    opacity += 0.05;
-                    formElement.style.transform = `translateX(${position}%)`;
-                    formElement.style.opacity = opacity;
-
-                    requestAnimationFrame(animate);
-                }
-            };
-            requestAnimationFrame(animate);
-        };
-        slideInForm();
+        fetch('http://localhost:8000/api/contact/csrf-token', {
+            credentials: 'include', 
+        })
+            .then(response => response.json())
+            .then(data => {
+                setCsrfToken(data.csrfToken);
+            })
+            .catch(error => {
+                console.error('Erreur lors de la récupération du token CSRF :', error);
+            });
     }, []);
+
+    // Votre animation existante...
 
     const sanitizeInput = (input) => {
         const div = document.createElement('div');
         div.textContent = input;
         return div.innerHTML;
-    }
+    };
 
-    //logique
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -49,13 +43,18 @@ function ContactForm() {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`, // Ajouter le token JWT dans l'en-tête
+                    'Authorization': `Bearer ${token}`,
                 },
-                body: JSON.stringify({ email: sanitizeEmail, message: sanitizeMessage }),
+                body: JSON.stringify({
+                    email: sanitizeEmail,
+                    message: sanitizeMessage,
+                    _csrf_token: csrfToken, // Inclure le token CSRF dans le corps de la requête
+                }),
+                credentials: 'include', // Inclure les cookies pour la session
             });
 
             if (response.ok) {
-                setEmail(''); // Réinitialiser les champ 
+                setEmail('');
                 setMessage('');
                 setResponseMessage('Votre message a été envoyé avec succès.');
             } else {
@@ -67,35 +66,38 @@ function ContactForm() {
     };
 
     return (
-    <div className="contact-background" style={{ backgroundImage: `url(${contactBackgroundImage})` }}>
-        <div className="contact-form-container">
-            <div className="contact-form-box" style={{ transform: 'translateX(100%)', opacity: 0 }}>
-                <h2>Contactez-nous</h2>
-                <p>N'hésitez pas à nous contacter !</p>
-                <form onSubmit={handleSubmit}>
-                    <div>
-                        <label>Email:</label>
-                        <input className="contact-form-input"
-                            type="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label>Message:</label>
-                        <textarea
-                            value={message}
-                            onChange={(e) => setMessage(e.target.value)}
-                            required
-                        ></textarea>
-                    </div>
-                    <button type="submit">Envoyer</button>
-                </form>
-                {responseMessage && <p className="response-message">{responseMessage}</p>}
+        <div className="contact-background" style={{ backgroundImage: `url(${contactBackgroundImage})` }}>
+            <div className="contact-form-container">
+                <div className="contact-form-box" style={{ transform: 'translateX(0%)', opacity: 1 }}>
+                    <h2>Contactez-nous</h2>
+                    <p>N'hésitez pas à nous contacter !</p>
+                    <form onSubmit={handleSubmit}>
+                        <div>
+                            <label>Email:</label>
+                            <input
+                                className="contact-form-input"
+                                type="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label>Message:</label>
+                            <textarea
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}
+                                required
+                            ></textarea>
+                        </div>
+                        {/* Optionnel : Inclure le token CSRF dans un champ caché */}
+                        <input type="hidden" name="_csrf_token" value={csrfToken} />
+                        <button type="submit">Envoyer</button>
+                    </form>
+                    {responseMessage && <p className="response-message">{responseMessage}</p>}
+                </div>
             </div>
         </div>
-    </div>
     );
 }
 

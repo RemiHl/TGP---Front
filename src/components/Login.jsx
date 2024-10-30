@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../style/Login.css';
 import logo from '../assets/logo.png';
@@ -8,8 +8,8 @@ function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
-    const [token, setToken] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    const [csrfToken, setCsrfToken] = useState('');
     const navigate = useNavigate();
 
     // Fonction nettoyage des entrées
@@ -18,6 +18,20 @@ function Login() {
         div.textContent = input;
         return div.innerHTML;
     };
+
+    // Récupérer le token CSRF lors du montage du composant
+    useEffect(() => {
+        fetch('http://localhost:8000/api/login/csrf-token', {
+            credentials: 'include', // Important pour les cookies de session
+        })
+            .then(response => response.json())
+            .then(data => {
+                setCsrfToken(data.csrfToken);
+            })
+            .catch(error => {
+                console.error('Erreur lors de la récupération du token CSRF :', error);
+            });
+    }, []);
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -32,7 +46,12 @@ function Login() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ email: sanitizedEmail, password: sanitizedPassword }),
+                body: JSON.stringify({
+                    email: sanitizedEmail,
+                    password: sanitizedPassword,
+                    _csrf_token: csrfToken,
+                }),
+                credentials: 'include', 
             });
 
             if (response.ok) {
@@ -87,6 +106,7 @@ function Login() {
                         <button type="submit" className="login-btn">Connexion</button>
                     </form>
                     {message && <p>{message}</p>}
+                    {errorMessage && <p className="error-message">{errorMessage}</p>}
                     <div className="login-footer">
                         <p>Pas encore inscrit ? <a href="/signup">Créer un compte</a></p>
                     </div>
