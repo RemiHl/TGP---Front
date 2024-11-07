@@ -8,7 +8,7 @@
     height: 400px;
     text-align: center;
     position: relative;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease-in-out;
     margin: 16px;
     display: flex;
     flex-direction: column;
@@ -25,7 +25,7 @@
     color: white;
     margin-bottom: 10px;
     z-index: 2;
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 1);
 }
 
 .service-description {
@@ -34,17 +34,24 @@
     color: rgb(255, 255, 255);
     transform: translateY(100%);
     opacity: 0;
-    transition: transform 0.5s ease, opacity 0.5s ease;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
     position: absolute;
     bottom: 20px;
     left: 0;
     right: 0;
     margin: auto;
-    z-index: 2; /* Assurez-vous que le texte soit par-dessus l'overlay */
+    z-index: 2;
 }
 
-/* Texte apparaissant au hover */
 .service-card:hover .service-description {
     transform: translateY(0);
     opacity: 1;
+}
+
+@media (max-width: 480px) {
+    .service-card {
+        width: 70%;
+        margin: 20px;
+        padding: 10px;
+    }
 }

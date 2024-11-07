@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../../style/Carousel.css'; // Assurez-vous que ce chemin est correct
+import '../../style/Carousel.css'; 
 import bateau2 from '../../assets/bateau2.jpg';
 import camion2 from '../../assets/camion2.jpg';
 import douane from '../../assets/douane.webp';
@@ -8,7 +8,7 @@ import avion from '../../assets/avion.jpg';
 import { initScrollReveal } from '../../js/scrollReveal';
 
 function Carousel() {
-    // Transformez le tableau d'images en un tableau d'objets avec image et titre
+    
     const slides = [
         { image: avion, title: 'Transport Aérien' },
         { image: bateau2, title: 'Transport Maritime' },

@@ -24,7 +24,7 @@ function ServiceCard({ title, description, cardBackground }) {
         <div className="service-card" 
             style={{ backgroundImage: `url(${cardBackground})` }}>
             <div className="overlay"></div> {/* Overlay pour le texte */}
-            <h3 className="service-title">{title}</h3>
+            <h3 className="service-title reveal-on-scroll">{title}</h3>
             <p className="service-description">{description}</p>
         </div>
     );

@@ -98,7 +98,8 @@
 
 /* Submit Button */
 .contact-form-box button {
-    width: 100%;
+    width: 90%;
+    height: 46px;
     background-color: #309c59;
     color: white;
     font-size: 1.5em;
