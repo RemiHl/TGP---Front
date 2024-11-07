@@ -13,7 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(10px); /* Ajoute un flou de l'arrière-plan */
+    backdrop-filter: blur(10px); 
     margin-top: 50px;
 }
 
@@ -129,8 +129,8 @@ label {
 /* Small Devices - 480px */
 @media (max-width: 480px) {
     .contact-form-box {
-        padding: 20px;
         width: 90%;
+        margin-top: 70px;
     }
 
     .contact-form-box h2 {
@@ -142,7 +142,7 @@ label {
     }
 
     .contact-form-box button {
-        font-size: 1.2em;
+        padding: 5px;
     }
 
     .contact-form-box input[type="email"],

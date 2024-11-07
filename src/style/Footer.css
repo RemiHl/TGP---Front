@@ -25,12 +25,11 @@
 .footer-logo {
   flex: 1;
   max-width: 300px;
-  text-align: center; /* Centrer le contenu à l'intérieur */
+  text-align: center;
 }
 
 .footer-logo img {
   width: 100px;
-  margin-bottom: 20px;
 }
 
 .footer-logo p {
@@ -116,4 +115,34 @@
 
 .footer-social .social-icons a:hover {
   color: #309c59;
+}
+
+@media (max-width: 480px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+  }
+
+  .footer-logo {
+    text-align: center;
+  }
+
+  .footer-logo p {
+    display: none;
+  }
+
+  .footer-logo img {
+    width: 90px;
+    margin-bottom: 0;
+  }
+
+  .footer-links {
+    display: none;
+  }
+
+  .footer-contact {
+    font-size: 16px;
+  }
 }

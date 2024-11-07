@@ -155,7 +155,7 @@ function AdminDashboard() {
                 </tbody>
             </table>
 
-            {/* Formulaire pour modifier l'adresse e-mail */}
+            {/* Formulaire pour modifier e-mail */}
             {selectedUserId && (
                 <div className="email-form">
                     <h3>Modifier l'adresse e-mail</h3>
@@ -170,7 +170,7 @@ function AdminDashboard() {
                 </div>
             )}
 
-            {/* Formulaire pour ajouter un nouvel utilisateur */}
+            {/* Formulaire nouvel utilisateur */}
             <div>
                 <div className="dashboard-title2">
                     <h3>Ajouter un nouvel utilisateur</h3>

@@ -68,7 +68,7 @@ function ContactForm() {
     return (
         <div className="contact-background" style={{ backgroundImage: `url(${contactBackgroundImage})` }}>
             <div className="contact-form-container">
-                <div className="contact-form-box" style={{ transform: 'translateX(0%)', opacity: 1 }}>
+                <div className="contact-form-box fade-in" style={{ transform: 'translateX(0%)', opacity: 1 }}>
                     <h2>Contactez-nous</h2>
                     <p>N'hésitez pas à nous contacter !</p>
                     <form onSubmit={handleSubmit}>

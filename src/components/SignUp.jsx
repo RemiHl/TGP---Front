@@ -15,7 +15,7 @@ function SignUp() {
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    // Fonction nettoyage des entrées
+    // nettoyage des entrées
     const sanitizeInput = (input) => {
         const div = document.createElement('div');
         div.textContent = input;

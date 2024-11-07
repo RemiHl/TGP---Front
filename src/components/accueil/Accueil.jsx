@@ -7,13 +7,13 @@ function Accueil() {
         const slideInImageAndTitle = () => {
             const imageElement = document.querySelector('.home-image');
             const titleElement = document.querySelector('.home-title');
-            let position = 100; // L'image commence à droite
-            let opacity = 0;    // L'opacité du titre commence à 0
+            let position = 100; 
+            let opacity = 0; 
 
             const animate = () => {
                 if (position > 0) {
                     position -= 2; // Réduire la position de l'image
-                    opacity += 0.05; // Augmenter progressivement l'opacité du titre
+                    opacity += 0.05; // Augmenter progressivement l'opacité
                     imageElement.style.transform = `translateX(${position}%)`;
                     titleElement.style.opacity = opacity;
 

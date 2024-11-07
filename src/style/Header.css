@@ -102,11 +102,12 @@ header:hover {
         display: none;
         flex-direction: column;
         align-items: center;
-        background-color: rgba(0, 128, 0, 0.658);
+        background-color: rgba(69, 69, 69, 0.658);
         position: absolute;
         top: 138px;
         left: 44.5%;
         transform: translateX(-50%);
+        opacity: 0;
         width: 80%;
         z-index: 99;
     }
@@ -115,10 +116,11 @@ header:hover {
         display: flex;
         height: 220%;
         top: 80%;
-        background-color: rgba(0, 128, 0, 0.63);
-        position: absolute;
+        background-color: rgba(69, 69, 69, 0.658);
+        opacity: 1;
         transform: translateX(-50%);
-        width: 100%;
+        position: absolute;
+        width: 110%;
         z-index: 99;
     }
 
@@ -126,7 +128,6 @@ header:hover {
         font-size: 18px;
         width: 100%;
         text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.271);
         top: 14px;
     }
 

@@ -15,7 +15,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
     border-radius: 20px;
     position: relative;
 }
@@ -24,8 +23,7 @@
     width: 100%;
     height: auto;
     object-fit: cover;
-    transition: opacity 1s ease-in-out; 
-    position: absolute;
+    transition: opacity 1s ease-in-out;
     top: 0;
     left: 0;
     opacity: 0;
@@ -91,23 +89,21 @@
 
 @media (max-width: 480px) {
     .carousel-container {
-        width: 80%;
+        width: 90%;
         height: 35vh;
     }
 
     .carousel-dot.active {
         position: absolute;
         background-color: green;
-        
     }
 
     .carousel-image-container {
         height: 100%;
-        overflow: hidden;
+        left: 50%;
     }
 
     .carousel-image.active {
-        left: 50%;
         top: 0;
         height: 100%;
     }
@@ -115,4 +111,14 @@
     .carousel-title h3 {
         font-size: 1.3em;
     }
+
+    .carousel-text h2 {
+        font-size: 40px;;
+    }
+
+    .carousel-text p {
+        font-size: 26px;
+    }
+
+
 }

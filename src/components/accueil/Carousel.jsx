@@ -22,7 +22,7 @@ function Carousel() {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentSlideIndex((prevIndex) => (prevIndex + 1) % slides.length);
-        }, 5000); // Changer d'image toutes les 5 secondes
+        }, 5000);
 
         return () => {
             clearInterval(interval);

@@ -22,7 +22,7 @@ function Login() {
     // Récupérer le token CSRF lors du montage du composant
     useEffect(() => {
         fetch('http://localhost:8000/api/login/csrf-token', {
-            credentials: 'include', // Important pour les cookies de session
+            credentials: 'include', 
         })
             .then(response => response.json())
             .then(data => {

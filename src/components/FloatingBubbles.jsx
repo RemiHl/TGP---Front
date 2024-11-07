@@ -6,30 +6,29 @@ const FloatingBubbles = () => {
         const numInitialBubbles = 40; // Nombre initial de bulles
         const bubblesContainer = document.getElementById('bubbles-container');
 
-        // Fonction pour créer une bulle
+        // créer une bulle
         const createBubble = () => {
             const bubble = document.createElement('div');
             bubble.classList.add('bubble');
 
-            // Taille aléatoire entre 10px et 60px
+            // Taille aléatoire
             const size = Math.random() * 50 + 10;
             bubble.style.width = `${size}px`;
             bubble.style.height = `${size}px`;
 
-            // Position horizontale aléatoire
+            // Position aléatoire
             bubble.style.left = `${Math.random() * 100}vw`;
 
-            // Durée d'animation aléatoire entre 5s et 15s
+            // Durée animation aléatoire
             const duration = Math.random() * 10 + 5;
             bubble.style.animationDuration = `${duration}s`;
 
-            // Délai d'animation aléatoire entre 0s et 10s
             const delay = Math.random() * 10;
             bubble.style.animationDelay = `${delay}s`;
 
             bubblesContainer.appendChild(bubble);
 
-            // Supprimer la bulle après l'animation
+            // Supprimer la bulle 
             bubble.addEventListener('animationend', () => {
                 bubble.remove();
             });
@@ -40,10 +39,9 @@ const FloatingBubbles = () => {
             createBubble();
         }
 
-        // Créer de nouvelles bulles à intervalles réguliers
+        // Créer à intervalles réguliers
         const interval = setInterval(createBubble, 500); // Toutes les 3 secondes
 
-        // Nettoyage lors du démontage du composant
         return () => clearInterval(interval);
     }, []);
 

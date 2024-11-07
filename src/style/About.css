@@ -127,8 +127,30 @@
         display: grid;
     }
 
+    .about-text p {
+        font-size: 26px;
+    }
+
+    .about-text h2 {
+        font-size: 40px;
+    }
+
     .circle-container {
         width: auto;
         height: 90vw;
+    }
+
+    .outer-circle {
+        width: 250px;
+        height: 250px;
+    }
+
+    .inner-circle {
+        width: 180px;
+        height: 180px;
+    }
+
+    .center-logo img {
+        height: 120px;
     }
 }
