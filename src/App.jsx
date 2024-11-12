@@ -14,6 +14,7 @@ import AProposPage from './pages/AProposPage';
 import Services from './pages/ServicePage';
 import FloatingBubbles from './components/FloatingBubbles';
 import DevisPage from './pages/DevisPage';
+import RGPDPage from './pages/RGPDPage';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="/devis" element={<PrivateRoute><DevisPage /></PrivateRoute>} />
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<PrivateRoute><ContactPage /></PrivateRoute>} />
+            <Route path="/rgpd" element={<RGPDPage />} />
             <Route path="/not-authorized" element={<NotAuthorizedPage />} />
             <Route path="/account" element={<PrivateRoute><AccountPage /></PrivateRoute>} />
           </Routes>

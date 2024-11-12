@@ -7,6 +7,8 @@ function NotAuthorizedPage() {
             <h1 className="error-title">Error - 404</h1>
             <p className="error-message">An error has occurred, to continue:</p>
             <ul className="error-list">
+                <li>Login</li>
+                <li>OR</li>
                 <li>Return to homepage.</li>
                 <li>OR</li>
                 <li>Send an email to an admin about this error.</li>

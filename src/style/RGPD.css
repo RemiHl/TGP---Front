@@ -1,0 +1,64 @@
+.rgpd-page-content {
+    max-width: 1000px;
+    padding: 60px;
+    margin: auto;
+    color: #333;
+    line-height: 1.2;
+    font-size: 22px;
+  }
+  
+  /* Titre principal de la page */
+  .rgpd-page-title {
+    font-size: 2em;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Section de contenu */
+  .rgpd-section {
+    margin-bottom: 20px;
+  }
+  
+  /* Titres des sections */
+  .rgpd-section-title {
+    font-size: 1.5em;
+    color: #34495e;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* Paragraphes de texte dans les sections */
+  .rgpd-section-text {
+    margin-bottom: 15px;
+  }
+  
+  /* Listes à puces */
+  .rgpd-list {
+    padding-left: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .rgpd-list-item {
+    margin-bottom: 10px;
+    list-style-type: disc;
+  }
+  
+  /* Media queries pour les écrans de 480px et moins */
+  @media (max-width: 480px) {
+    .rgpd-page-content {
+        padding-top: 130px;
+    }
+  
+    .rgpd-page-title {
+      font-size: 1.5em;
+    }
+  
+    .rgpd-section-title {
+      font-size: 1.2em;
+    }
+  
+    .rgpd-list-item {
+      font-size: 0.9em;
+    }
+  }

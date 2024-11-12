@@ -26,6 +26,8 @@ function Footer() {
                     <li><a href="/services">Services</a></li>
                     <li><a href="/infos">A propos</a></li>
                     <li><a href="/contact">Contact</a></li>
+                    <li><a href="/devis">Devis</a></li>
+                    <li><a href="/rgpd">Politique de protection des données</a></li>
                 </ul>
             </div>
             <div className="footer-contact">
