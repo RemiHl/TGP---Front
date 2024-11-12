@@ -16,13 +16,13 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1; /* L'image est en arrière-plan */
+    z-index: 1;
 }
 
 .fonctionnement-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Garde les proportions de l'image tout en remplissant */
+    object-fit: cover;
     background-size: cover;
     background-position: center;
 }

@@ -12,8 +12,8 @@ function Accueil() {
 
             const animate = () => {
                 if (position > 0) {
-                    position -= 2; // Réduire la position de l'image
-                    opacity += 0.05; // Augmenter progressivement l'opacité
+                    position -= 2;
+                    opacity += 0.05;
                     imageElement.style.transform = `translateX(${position}%)`;
                     titleElement.style.opacity = opacity;
 

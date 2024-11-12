@@ -85,7 +85,7 @@
     font-size: 1.5rem;
 }
 
-/* Media Query pour 480px et moins */
+/* Media Query pour 480px */
 @media (max-width: 480px) {
     .carousel-container {
         width: 90%;
@@ -101,7 +101,6 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        /* left: 50%; */
     }
 
     .carousel-text h2 {

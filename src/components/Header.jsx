@@ -5,16 +5,16 @@ import logo from '../assets/logo.png';
 
 function Header() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [menuOpen, setMenuOpen] = useState(false); // State pour contrôler le menu burger
+    const [menuOpen, setMenuOpen] = useState(false);
     const location = useLocation();
 
     useEffect(() => {
         const token = localStorage.getItem('token');
         if (token) {
-            setIsLoggedIn(true); // Si token trouvé, utilisateur connecté
+            setIsLoggedIn(true); 
         }
 
-        // Animation du header lors du changement de page
+        // Animation header
         const animateHeader = () => {
             const headerElement = document.querySelector('header');
             let position = -100;
@@ -33,7 +33,7 @@ function Header() {
             requestAnimationFrame(slideInHeader);
         };
 
-        animateHeader(); // Animation au chargement ou changement de route
+        animateHeader();
     }, [location]);
 
     const handleLogout = () => {
@@ -53,7 +53,7 @@ function Header() {
                 &#9776; {/* Icone du burger */}
             </div>
             <nav>
-                <ul className={menuOpen ? 'active' : ''}> {/* Ajout de la classe active si le menu est ouvert */}
+                <ul className={menuOpen ? 'active' : ''}> {/* Ajout de la classe active si menu ouvert */}
                     <li>
                         <Link to="/" onClick={() => setMenuOpen(false)}>Accueil</Link>
                     </li>

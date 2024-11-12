@@ -48,7 +48,6 @@
     }
 }
 
-/* Input Styling */
 .devis-form-box input[type="text"],
 .devis-form-box input[type="email"],
 .devis-form-box select {
@@ -64,21 +63,18 @@
     box-sizing: border-box;
 }
 
-/* Focus Styling */
 .devis-form-box input[type="text"]:focus,
 .devis-form-box input[type="email"]:focus,
 .devis-form-box select:focus {
-    border-color: #309c59; /* Change border color when focused */
+    border-color: #309c59;
 }
 
-/* Form Title */
 .devis-form-box h2 {
     font-size: 2.8em;
     color: #309c59;
     margin-bottom: 20px;
 }
 
-/* Submit Button */
 .devis-form-box button {
     width: 90%;
     background-color: #309c59;
@@ -95,7 +91,6 @@
     background-color: #267a47;
 }
 
-/* Layout for Two Inputs Per Row */
 .form-row {
     display: flex;
     justify-content: space-between;

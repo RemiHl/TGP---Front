@@ -5,10 +5,11 @@ import '../style/AdminDashboard.css';
 function AdminDashboard() {
     const [users, setUsers] = useState([]);
     const [message, setMessage] = useState('');
-    const [selectedUserId, setSelectedUserId] = useState(null); // Pour l'édition d'e-mail
-    const [newEmail, setNewEmail] = useState(''); // Pour stocker le nouvel e-mail
-    const [newUserEmail, setNewUserEmail] = useState(''); // Pour le formulaire d'ajout
-    const [newUserPassword, setNewUserPassword] = useState(''); // Pour le mot de passe du nouvel utilisateur
+    const [messages, setMessages] = useState([]);
+    const [selectedUserId, setSelectedUserId] = useState(null);
+    const [newEmail, setNewEmail] = useState('');
+    const [newUserEmail, setNewUserEmail] = useState('');
+    const [newUserPassword, setNewUserPassword] = useState('');
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -21,6 +22,7 @@ function AdminDashboard() {
                         navigate('/not-authorized');
                     } else {
                         fetchUsers(token);
+                        fetchMessages(token);
                     }
                 } catch (error) {
                     console.error('Erreur lors du décodage token:', error);
@@ -71,7 +73,7 @@ function AdminDashboard() {
         }
     };
 
-    // Pour modifier l'email d'un utilisateur
+    // Modifier l'email 
     const selectedUser = users.find((user) => user.id === selectedUserId);
     const handleUpdateEmail = async (userId) => {
         const token = localStorage.getItem('token');
@@ -88,8 +90,8 @@ function AdminDashboard() {
             const data = await response.json();
             if (response.ok) {
                 setMessage('Email modifié avec succès');
-                setNewEmail(''); // Réinitialiser le champ e-mail
-                fetchUsers(token); // Recharger les utilisateurs
+                setNewEmail('');
+                fetchUsers(token);
             } else {
                 setMessage(data.message || 'Une erreur est survenue');
             }
@@ -98,7 +100,7 @@ function AdminDashboard() {
         }
     };
 
-    // Pour ajouter un nouvel utilisateur
+    // Ajouter un nouvel utilisateur
     const handleAddUser = async () => {
         const token = localStorage.getItem('token');
         try {
@@ -125,6 +127,26 @@ function AdminDashboard() {
         }
     };
 
+    const fetchMessages = async (token) => {
+        try {
+            const response = await fetch('http://localhost:8000/api/admin/contact', {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json',
+                },
+            });
+            const data = await response.json();
+            if (response.ok) {
+                setMessages(data);
+            } else {
+                setMessage(data.message || 'Une erreur est survenue');
+            }
+        } catch (error) {
+            setMessage('Erreur réseau');
+        }
+    };
+
     return (
         <div className="content-container">
             <div className="dashboard-title">
@@ -138,6 +160,7 @@ function AdminDashboard() {
                         <th>Email</th>
                         <th>Rôles</th>
                         <th>Actions</th>
+                        <th>Messages</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -150,12 +173,17 @@ function AdminDashboard() {
                                 <button id="delete_button" onClick={() => handleDelete(user.id)}>Supprimer</button>
                                 <button id="modify_button"onClick={() => setSelectedUserId(user.id)}>Modifier Email</button>
                             </td>
+                            <td>
+                                {messages.filter((message) => message.connectedUser === user.id).map((message) => (
+                                    <p key={message.id}>{message.message}</p>
+                                ))}
+                            </td>
                         </tr>
                     ))}
                 </tbody>
             </table>
 
-            {/* Formulaire pour modifier e-mail */}
+            {/* Formulaire modifier e-mail */}
             {selectedUserId && (
                 <div className="email-form">
                     <h3>Modifier l'adresse e-mail</h3>

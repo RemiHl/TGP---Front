@@ -1,17 +1,16 @@
-/* Conteneur principal pour le texte et les cercles */
 .about {
     display: flex;
-    justify-content: space-between; /* Sépare le texte et les cercles */
-    align-items: center; /* Aligne verticalement le texte et les cercles */
+    justify-content: space-between; 
+    align-items: center; 
     min-height: 300px;
     text-align: left;
     margin-bottom: 40px;
     padding: 20px;
-    position: relative; /* Pour assurer que le contenu reste dans le conteneur */
+    position: relative; 
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* Texte de la section about */
+/* Section about */
 .about-text {
     flex: 1;
     font-size: 24px;
@@ -46,7 +45,7 @@
     background-color: rgb(0, 104, 0);
 }
 
-/* Conteneur principal des cercles */
+/* Conteneur des cercles */
 .circle-container {
     width: 28vw;
     height: 33vw;
@@ -55,21 +54,19 @@
     align-items: center;
 }
 
-/* Cercles (externe et interne) */
+/* Cercles */
 .outer-circle, .inner-circle {
     position: absolute;
     border-radius: 50%;
     border: 2px dashed #ccc;
 }
 
-/* Cercle extérieur */
 .outer-circle {
     width: 280px;
     height: 280px;
     animation: rotate 20s linear infinite;
 }
 
-/* Cercle intérieur */
 .inner-circle {
     width: 200px;
     height: 200px;
@@ -94,7 +91,6 @@
 
 
 
-/* Positionnement des icônes */
 .outer-circle .icon:nth-child(1) { top: -3%; left: 50%; transform: translateX(-50%); }
 .outer-circle .icon:nth-child(2) { top: 50%; left: 97%; transform: translateY(-50%); }
 .outer-circle .icon:nth-child(3) { top: 111%; left: 50%; transform: translate(-50%, -100%); }
@@ -104,7 +100,7 @@
 .inner-circle .icon:nth-child(2) { top: 50%; left: 96%; transform: translateY(-50%); }
 .inner-circle .icon:nth-child(3) { top: 50%; left: -4%; transform: translateY(-50%); }
 
-/* Animation de rotation */
+/* Rotation */
 @keyframes rotate {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
@@ -112,11 +108,11 @@
 
 .reveal-on-scroll {
     opacity: 0;
-    transform: translateY(50px); /* Translation initiale */
+    transform: translateY(50px);
     transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-/* Affichage des éléments lors du scroll */
+/* Affichage au scroll */
 .reveal-on-scroll.visible {
     opacity: 1;
     transform: translateY(0);

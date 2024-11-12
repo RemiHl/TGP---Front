@@ -60,7 +60,6 @@ function Carousel() {
                         />
                     ))}
                 </div>
-                {/* Afficher le titre de la diapositive actuelle */}
                 <div className="carousel-title">
                     <h3>{slides[currentSlideIndex].title}</h3>
                 </div>

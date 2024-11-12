@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import '../../style/Nous.css';
-import fonctionnementImage from '../../assets/commission.jpg'; // Image à utiliser
+import fonctionnementImage from '../../assets/commission.jpg';
 import { FaBox, FaShieldAlt, FaLeaf } from 'react-icons/fa';
 import { initScrollReveal } from '../../js/scrollReveal';
 

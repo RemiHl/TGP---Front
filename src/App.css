@@ -1,16 +1,15 @@
-/* Styles pour toute l'application */
+/* Style pour l'application */
 .app-wrapper {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Assure que l'application prend toute la hauteur de la page */
+  min-height: 100vh;
 }
 
 .app-content {
-  flex: 1; /* Cette partie prend toute la place disponible */
+  flex: 1; 
   padding: 20px;
 }
 
-/* Assurez-vous que le footer ne chevauche rien */
 footer {
   background-color: #f2f2f2;
   color: #333;

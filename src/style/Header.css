@@ -79,8 +79,6 @@ header:hover {
 }
 
 /* === Media Queries === */
-
-/* Mobile burger menu */
 @media (max-width: 480px) {
     header {
         flex-direction: column;

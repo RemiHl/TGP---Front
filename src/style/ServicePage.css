@@ -11,23 +11,22 @@
     object-fit: cover;
 }
 
-/* Conteneur et style du titre sur l'image */
+/* Conteneur du titre */
 .home-service-title-container {
     font-size: 1.7em;
     position: absolute;
-    bottom: 110px; /* Placer le titre 20px depuis le bas de l'image */
-    left: 20px; /* Placer le titre 20px depuis la gauche */
-    z-index: 2; /* Assure que le titre soit au-dessus de l'image */
+    bottom: 110px;
+    left: 20px; 
+    z-index: 2;
 }
 
 .home-service-title {
     font-size: 3em;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ajoute une ombre au texte pour le rendre plus lisible */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin: 0;
 }
 
-/* Autres styles */
 .services-title-container {
     text-align: center;
     margin: 50px 0;

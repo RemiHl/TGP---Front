@@ -15,7 +15,7 @@ function SignUp() {
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    // nettoyage des entrées
+    // nettoyage
     const sanitizeInput = (input) => {
         const div = document.createElement('div');
         div.textContent = input;
@@ -25,28 +25,25 @@ function SignUp() {
     const handleSignUp = async (e) => {
         e.preventDefault();
 
-        // Réinitialiser les messages
         setMessage('');
 
-        // Validation de l'email
+        // Validation email
         if (!emailRegex.test(email)) {
             setMessage('Veuillez entrer un email valide.');
             return;
         }
 
-        // Vérifier si les mots de passe correspondent
         if (password !== confirmPassword) {
             setMessage('Les mots de passe ne correspondent pas.');
             return;
         }
 
-        // Valider le mot de passe avec la regex
+        // Validation mot de passe
         if (!passwordRegex.test(password)) {
             setMessage('Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial.');
             return;
         }
 
-        // Sanitisation des entrées
         const sanitizedEmail = sanitizeInput(email);
         const sanitizedPassword = sanitizeInput(password);
 
@@ -60,11 +57,10 @@ function SignUp() {
             });
 
             if (response.ok) {
-                const data = await response.json(); // Récupération de la réponse JSON
-                localStorage.setItem('token', data.token); // Stockage du token JWT
+                const data = await response.json(); 
+                localStorage.setItem('token', data.token); 
                 setMessage('Inscription réussie !');
                 
-                // Rediriger vers la page de connexion après une inscription réussie
                 setTimeout(() => {
                     navigate('/login');
                 }, 2000);

@@ -19,7 +19,7 @@ function About() {
     }, []);
 
     const handleRedirect = () => {
-        navigate('/infos'); // Redirige vers la page /infos
+        navigate('/infos');
     };
 
     return (

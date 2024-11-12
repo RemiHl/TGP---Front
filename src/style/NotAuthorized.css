@@ -1,7 +1,7 @@
 .error-page {
-    background-color: #0000aa; /* Fond bleu */
-    color: #ffffff; /* Texte blanc */
-    font-family: 'Courier New', Courier, monospace; /* Style rétro */
+    background-color: #0000aa;
+    color: #ffffff; 
+    font-family: 'Courier New', Courier, monospace;
     height: 100vh;
     width: 221vh;
     display: flex;
@@ -12,8 +12,8 @@
 }
 
 .error-title {
-    background-color: #aaaaaa; /* Fond gris pour le titre */
-    color: #000000; /* Texte noir pour contraster */
+    background-color: #aaaaaa; 
+    color: #000000;
     padding: 10px;
     font-size: 32px;
     border-radius: 5px;
@@ -26,7 +26,7 @@
 }
 
 .error-list {
-    list-style-type: none; /* Supprime les puces des listes */
+    list-style-type: none;
     padding: 0;
     margin-bottom: 20px;
 }
@@ -40,16 +40,16 @@
 }
 
 .link {
-    color: #ffffff; /* Lien blanc */
+    color: #ffffff; 
     text-decoration: none;
     font-weight: bold;
     padding: 8px 16px;
-    background-color: #2980b9; /* Fond bleu pour le lien */
+    background-color: #2980b9; 
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
 .link:hover {
-    background-color: #3498db; /* Changement de couleur au survol */
+    background-color: #3498db; 
     text-decoration: underline;
 }

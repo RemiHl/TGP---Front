@@ -12,14 +12,13 @@ function Login() {
     const [csrfToken, setCsrfToken] = useState('');
     const navigate = useNavigate();
 
-    // Fonction nettoyage des entrées
     const sanitizeInput = (input) => {
         const div = document.createElement('div');
         div.textContent = input;
         return div.innerHTML;
     };
 
-    // Récupérer le token CSRF lors du montage du composant
+    // Récupérer le CSRF au montage
     useEffect(() => {
         fetch('http://localhost:8000/api/login/csrf-token', {
             credentials: 'include', 
@@ -36,7 +35,6 @@ function Login() {
     const handleLogin = async (e) => {
         e.preventDefault();
 
-        // Nettoyage des entrées utilisateur
         const sanitizedEmail = sanitizeInput(email);
         const sanitizedPassword = sanitizeInput(password);
 
@@ -56,14 +54,12 @@ function Login() {
 
             if (response.ok) {
                 const data = await response.json();
-                localStorage.setItem('token', data.token); // Stockage du token JWT
+                localStorage.setItem('token', data.token);
 
-                // Décoder le token pour vérifier les rôles
                 const decodedToken = jwt_decode(data.token);
 
-                // Vérifier si l'utilisateur a le rôle ADMIN
                 if (decodedToken.roles && decodedToken.roles.includes('ROLE_ADMIN')) {
-                    navigate('/admin'); // Rediriger vers le dashboard admin
+                    navigate('/admin');
                 } else {
                     navigate('/');
                 }

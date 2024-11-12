@@ -6,14 +6,14 @@
 
 .pourquoi-nous-title {
     font-size: 3em;
-    color: #309c59; /* Vert principal */
+    color: #309c59;
     margin-bottom: 40px;
 }
 
 .pourquoi-nous-content {
     font-size: 2em;
     line-height: 1.5;
-    color: #555; /* Couleur du texte */
+    color: #555;
     max-width: 1200px;
     margin: 0 auto;
 }

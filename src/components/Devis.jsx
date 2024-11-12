@@ -18,7 +18,7 @@ function DevisPage() {
             try {
                 const response = await fetch('http://localhost:8000/api/services');
                 const data = await response.json();
-                setServices(data); // Enregistre les services récupérés
+                setServices(data);
             } catch (error) {
                 console.error('Erreur lors du chargement des services', error);
             }
@@ -32,7 +32,7 @@ function DevisPage() {
 
         const devisData = {
             ...formData,
-            services: [selectedService] // Utilise l'ID du service sélectionné
+            services: [selectedService]
         };
 
         try {
@@ -63,7 +63,7 @@ function DevisPage() {
     };
 
     const handleServiceChange = (e) => {
-        setSelectedService(e.target.value); // Enregistre l'ID du service sélectionné
+        setSelectedService(e.target.value);
     };
 
     return (

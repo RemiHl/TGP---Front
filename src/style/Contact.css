@@ -17,7 +17,6 @@
     margin-top: 50px;
 }
 
-/* Form Box Styling */
 .contact-form-box {
     background: rgba(255, 255, 255, 0.9);
     padding: 40px;
@@ -49,7 +48,6 @@
     }
 }
 
-/* Contact Form Title */
 .contact-form-box h2 {
     font-size: 2.8em;
     color: #309c59;
@@ -60,7 +58,7 @@
     font-size: 1.3em;
 }
 
-/* Form Inputs */
+/* Inputs */
 .contact-form-box input[type="email"],
 .contact-form-box textarea {
     width: 100%;
@@ -75,7 +73,6 @@
     box-sizing: border-box;
 }
 
-/* Input and Textarea Focus State */
 .contact-form-box input[type="email"]:focus,
 .contact-form-box textarea:focus {
     border-color: #309c59;
@@ -86,7 +83,6 @@
     height: 30px;
 }
 
-/* Textarea Styling */
 .contact-form-box textarea {
     min-height: 150px;
     background: rgba(255, 255, 255, 0.37);
@@ -96,7 +92,6 @@
     background: rgba(255, 255, 255, 0.596);
 }
 
-/* Submit Button */
 .contact-form-box button {
     width: 90%;
     height: 46px;
@@ -114,7 +109,6 @@
     background-color: #267a47;
 }
 
-/* Response Message Styling */
 .response-message {
     margin-top: 35px;
     font-size: 1em;
@@ -126,8 +120,6 @@ label {
 }
 
 /* Media Queries */
-
-/* Small Devices - 480px */
 @media (max-width: 480px) {
     .contact-form-box {
         width: 90%;
@@ -157,7 +149,6 @@ label {
     }
 }
 
-/* Medium Devices - 768px */
 @media (max-width: 768px) {
     .contact-form-box {
         padding: 30px;
@@ -187,7 +178,6 @@ label {
     }
 }
 
-/* Large Devices - 1280px */
 @media (min-width: 1280px) {
     .contact-form-box {
         width: 400px;

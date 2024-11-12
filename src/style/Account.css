@@ -40,7 +40,6 @@
     transition: border-color 0.3s ease;
 }
 
-/* Focus sur les inputs */
 .account-input:focus {
     border-color: #309c59;
     outline: none;
@@ -63,7 +62,7 @@
     background-color: #267a47;
 }
 
-/* Bouton Supprimer le compte */
+/* Bouton Supprimer */
 .delete-account-button {
     background-color: #e74c3c;
     margin: 20px;
@@ -74,7 +73,7 @@
     background-color: #c0392b;
 }
 
-/* Message d'erreur ou succès */
+/* Messages */
 .account-message {
     margin-top: 20px;
     color: #309c59;

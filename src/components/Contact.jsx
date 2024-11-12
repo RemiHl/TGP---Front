@@ -8,7 +8,7 @@ function ContactForm() {
     const [responseMessage, setResponseMessage] = useState('');
     const [csrfToken, setCsrfToken] = useState('');
 
-    // Récupérer le token CSRF lors du montage du composant
+    // Récupérer le CSRF au montage
     useEffect(() => {
         fetch('http://localhost:8000/api/contact/csrf-token', {
             credentials: 'include', 
@@ -21,8 +21,6 @@ function ContactForm() {
                 console.error('Erreur lors de la récupération du token CSRF :', error);
             });
     }, []);
-
-    // Votre animation existante...
 
     const sanitizeInput = (input) => {
         const div = document.createElement('div');
@@ -48,9 +46,9 @@ function ContactForm() {
                 body: JSON.stringify({
                     email: sanitizeEmail,
                     message: sanitizeMessage,
-                    _csrf_token: csrfToken, // Inclure le token CSRF dans le corps de la requête
+                    _csrf_token: csrfToken,
                 }),
-                credentials: 'include', // Inclure les cookies pour la session
+                credentials: 'include',
             });
 
             if (response.ok) {
@@ -90,7 +88,7 @@ function ContactForm() {
                                 required
                             ></textarea>
                         </div>
-                        {/* Optionnel : Inclure le token CSRF dans un champ caché */}
+                        {/* Champ caché pour CSRF */}
                         <input type="hidden" name="_csrf_token" value={csrfToken} />
                         <button type="submit">Envoyer</button>
                     </form>

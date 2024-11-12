@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../style/Account.css'; // Assurez-vous que le fichier CSS est lié
+import '../style/Account.css';
 
 function Account() {
     const [oldPassword, setOldPassword] = useState('');

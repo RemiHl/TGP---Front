@@ -29,27 +29,25 @@
     align-items: center;
 }
 
-/* L'image commence hors de l'ecran */
 .home-image {
     transform: translateX(100%); 
     width: 100%; 
     height: auto;
-    transition: transform 1s ease; /* Optionnel pour ajouter une fluidité */
+    transition: transform 1s ease; 
 }
 
 /* Cacher le titre au départ */
 .home-title {
-    opacity: 0; /* Le titre invisible */
+    opacity: 0; 
     transition: opacity 4s ease;
     font-size: 5.5em;
     color: white;
     bottom: 20px;
     left: 20px;
-    z-index: 2; /* titre sur l'image */
+    z-index: 2; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Assurer que le titre soit bien positionné dans la section */
 .home-title-container {
     position: absolute;
     bottom: 20px;
